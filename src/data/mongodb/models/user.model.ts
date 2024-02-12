@@ -23,6 +23,6 @@ const userSchema = new Schema({
         default: 'USER_ROLE',
         enum: ['ADMIN_ROLE', 'USER_ROLE']
     }
-}, { timestamps: true })
+}, { timestamps: false })
 
 export const UserModel = mongoose.model('User', userSchema);
