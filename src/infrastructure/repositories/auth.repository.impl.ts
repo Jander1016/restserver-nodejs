@@ -1,4 +1,4 @@
-import { AuthDatasource, AuthRepository, RegisterUserDto, UserEntity } from "../../domain";
+import { AuthDatasource, AuthRepository, LoginUserDto, RegisterUserDto, UserEntity } from "../../domain";
 
 export class AuthRepositoryImpl implements AuthRepository{
   
@@ -8,6 +8,10 @@ export class AuthRepositoryImpl implements AuthRepository{
 
   register(registerUserDto: RegisterUserDto): Promise<UserEntity> {
       return this.authDatasource.register(registerUserDto);
+  }
+
+  login(loginUserDto: LoginUserDto): Promise<UserEntity> {
+      return this.authDatasource.login(loginUserDto)
   }
 
 }
